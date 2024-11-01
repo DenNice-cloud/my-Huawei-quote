@@ -63,7 +63,8 @@ import axios from "axios";
 const error = ref(null);
 const historyList = ref([]);
 const randomQuote = ref({});
-const API_QUOTES = "https://api.api-ninjas.com/v1/quotes";
+// const API_QUOTES = "https://api.api-ninjas.com/v1/quotes";
+const API_QUOTES = "https://dummyjson.com/quotes";
 
 async function fetchQuote() {
   try {
