@@ -86,6 +86,7 @@ async function fetchQuote() {
 
 async function getRandomQuote() {
   const quote = await fetchQuote();
+  
   if (quote) {
     randomQuote.value = quote;
   }
