@@ -78,7 +78,7 @@ async function fetchQuote() {
       }
     );
 
-    
+
     return response.data[0];
   } catch (err) {
     error.value = "The citation could not be loaded. Please try again later.";
@@ -108,7 +108,7 @@ onMounted(async () => {
 
 function getAnother() {
   getRandomQuote();
-  // addToHistory();
+  addToHistory();
 }
 
 function copyToClipboard(value) {
