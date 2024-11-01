@@ -108,8 +108,8 @@ onMounted(async () => {
   addToHistory();
 });
 
-async function getAnother() {
-  await getRandomQuote();
+function getAnother() {
+  getRandomQuote();
   addToHistory();
 }
 
