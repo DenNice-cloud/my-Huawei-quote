@@ -71,16 +71,17 @@ async function fetchQuote() {
   try {
     error.value = null;
 
-    const response = await axios.get(
-      API_QUOTES,
-      {
-        headers: {
-          "X-Api-Key": import.meta.env.VITE_URL_CODE,
-        },
-      }
-    );
-
-    return response.data[0];
+    const response = await axios.get(API_QUOTES);
+    // const response = await axios.get(
+    //   API_QUOTES,
+    //   {
+    //     headers: {
+    //       "X-Api-Key": import.meta.env.VITE_URL_CODE,
+    //     },
+    //   }
+    // );
+    return response.data.quotes[0];
+    // return response.data[0];
   } catch (err) {
     error.value = "The citation could not be loaded. Please try again later.";
   }
