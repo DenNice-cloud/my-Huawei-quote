@@ -78,6 +78,7 @@ async function fetchQuote() {
       }
     );
 
+    
     return response.data[0];
   } catch (err) {
     error.value = "The citation could not be loaded. Please try again later.";
