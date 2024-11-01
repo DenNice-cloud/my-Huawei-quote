@@ -63,25 +63,24 @@ import axios from "axios";
 const error = ref(null);
 const historyList = ref([]);
 const randomQuote = ref({});
-// const API_QUOTES = "https://api.api-ninjas.com/v1/quotes";
-
-const API_QUOTES = "https://dummyjson.com/quotes";
+const API_QUOTES = "https://api.api-ninjas.com/v1/quotes";
+// const API_QUOTES = "https://dummyjson.com/quotes";
 
 async function fetchQuote() {
   try {
     error.value = null;
 
-    const response = await axios.get(API_QUOTES);
-    // const response = await axios.get(
-    //   API_QUOTES,
-    //   {
-    //     headers: {
-    //       "X-Api-Key": import.meta.env.VITE_URL_CODE,
-    //     },
-    //   }
-    // );
-    return response.data.quotes[0];
-    // return response.data[0];
+    // const response = await axios.get(API_QUOTES);
+    const response = await axios.get(
+      API_QUOTES,
+      {
+        headers: {
+          "X-Api-Key": import.meta.env.VITE_URL_CODE,
+        },
+      }
+    );
+    // return response.data.quotes[0];
+    return response.data[0];
   } catch (err) {
     error.value = "The citation could not be loaded. Please try again later.";
   }
